@@ -10,7 +10,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with: 
-            node-version: 22
+            node-version: 18
       - name: install dependencies
         run : npm ci
       - name: Run tests 
@@ -23,7 +23,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with: 
-           node-version: 22
+           node-version: 18
       - name: install dependencies
         run : npm ci
       - name: Build project
