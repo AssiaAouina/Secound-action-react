@@ -1,0 +1,39 @@
+
+name: Deploy Project 
+on: push 
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with: 
+            node-version: 22
+      - name: install dependencies
+        run : npm ci
+      - name: Run tests 
+        run: npm test
+  deploy:
+     runs-on: ubuntu-latest
+     steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with: 
+           node-version: 22
+      - name: install dependencies
+        run : npm ci
+      - name: Build project
+        run: npm run build
+      - name: deploy
+        run: echo"deploying...""
+        
+
+
+      # every job gets its own runner it own vm that's isolated from other machine and jobs
+
+    #  with: for change settings
+       
